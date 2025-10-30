@@ -302,7 +302,11 @@ SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-ex
 	-config $(Q)$(TEST_RESROOT)$(D)pltest.xml$(Q) -explainExcludes \
 	-xids all,$(PLATFORM),$(VARIATION) -plats all,$(PLATFORM),$(VARIATION) -nonZeroExitWhenError; \
 	$(TEST_STATUS)</command>
-		<platformRequirements>^os.linux,^os.win,arch.x86</platformRequirements>
+		<platformRequirementsList>
+    		<platformRequirements>os.win,arch.x86</platformRequirements>
+    		<platformRequirements>os.linux,arch.x86</platformRequirements>
+        </platformRequirementsList>
+		<!--<platformRequirements>^os.linux,^os.win,arch.x86</platformRequirements>-->
 		<capabilities>hypervisor:VMWare</capabilities>
 		<levels>
 			<level>sanity</level>
